@@ -1,0 +1,15 @@
+\xi(Y,a) =  - \sum_{c=1}^{nclass} y_{c} \cdot log( a_{c})
+
+\begin{split}
+\partial_i^{(L)}=\frac{\partial \xi}{\partial z_i^{(L)}} 
+\end{split}
+
+\begin{split}
+\frac{\partial \xi}{\partial z_i^{(L)}} & = - \sum_{j=1}^2 \frac{\partial y_j log(a_j)}{\partial z_i^{(L)}}{} =
+- \sum_{j=1}^2 y_j \frac{\partial log(a_j)}{\partial z_i^{(L)}} = - \sum_{j=1}^2 y_j \frac{1}{a_j} \frac{\partial a_j}{\partial z_i^{(L)}} \\
+& = - \frac{y_i}{a_i} \frac{\partial a_i}{\partial z_i^{(L)}} - \sum_{j \neq i}^2 \frac{y_j}{a_j} \frac{\partial a_j}{\partial z_i^{(L)}}
+= - \frac{y_i}{a_i} a_i (1-a_i) - \sum_{j \neq i}^2 \frac{y_j}{a_j} (-a_j a_i) \\
+& = - y_i + y_i a_i + \sum_{j \neq i}^2 y_j a_i = - y_i + \sum_{j = 1}^2 y_j a_i
+= -y_i + a_i \sum_{j = 1}^2 y_j \\
+& = a_i - y_i
+\end{split}
